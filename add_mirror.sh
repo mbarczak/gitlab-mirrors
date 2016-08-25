@@ -433,7 +433,7 @@ if ${git};then
     git remote add gitlab "${gitlab_remote}"
     git config --add remote.gitlab.push '+refs/heads/*:refs/heads/*'
     git config --add remote.gitlab.push '+refs/tags/*:refs/tags/*'
-    git config remote.gitlab.mirror true
+    git config remote.gitlab.mirror false
     #Check the initial repository into gitlab
     green_echo "Checking the mirror into gitlab." 1>&2
     git fetch
@@ -517,7 +517,7 @@ elif ${hg};then
     git remote add gitlab "${gitlab_remote}"
     git config --add remote.gitlab.push '+refs/heads/*:refs/heads/*'
     git config --add remote.gitlab.push '+refs/tags/*:refs/tags/*'
-    git config remote.gitlab.mirror false
+    git config remote.gitlab.mirror true
     #Check the initial repository into gitlab
     green_echo "Checking the mirror into gitlab." 1>&2
     if ${http_remote};then
